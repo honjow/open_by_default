@@ -1,8 +1,9 @@
 name: open_by_default_example
 description: Demonstrates how to use the open_by_default plugin.
 
-
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.15.1 <3.0.0"

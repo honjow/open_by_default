@@ -23,4 +23,6 @@ flutter:
       android:
         package: com.honjow.open_by_default
         pluginClass: OpenByDefaultPlugin
+      ios:
+        pluginClass: OpenByDefaultPlugin
 
