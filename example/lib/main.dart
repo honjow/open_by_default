@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:open_by_default/open_by_default.dart';
 
 void main() {
+  SystemUiOverlayStyle uiStyle = SystemUiOverlayStyle.light.copyWith(
+    statusBarColor: Colors.transparent,
+  );
+
+  SystemChrome.setSystemUIOverlayStyle(uiStyle);
+
+  // SystemChrome.setSystemUIOverlayStyle(
+  //     const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(const MyApp());
 }
 
@@ -24,9 +33,19 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          // brightness: Brightness.dark,
+          // primaryColor: Colors.red[100],
+          // appBarTheme: AppBarTheme.of(context).copyWith(
+          //   // 方式1
+          //   color: Colors.white,
+          //
+          // ),
+          ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('open_by_default example app'),
+          // backgroundColor: Colors.white,
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -35,7 +54,7 @@ class _MyAppState extends State<MyApp> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
+                const TextButton(
                   child: Text('open_by_default'),
                   onPressed: OpenByDefault.open,
                 ),
